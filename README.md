@@ -70,7 +70,7 @@ The ch should be a character representing the character.
 
     GreetingWords = "Hello world",
     Z = lists:zip( GreetingWords , lists:seq(1, length(GreetingWords))),
-    [complex6:change_cell(I, 2,  Char, 1 , 3) || {Char, I} <- Z],
+    [etermbox:change_cell(I, 2,  Char, 1 , 3) || {Char, I} <- Z],
 
 Until now, we've only updated termbox's internal buffer. To actually render the content to the screen, we need to call present/0.
 
