@@ -5,7 +5,6 @@ Low-level termbox bindings for Erlang.
 
 For high-level, declarative terminal UIs, If there is another, let me know.
 
-
 Getting Started
 
 Etermbox implements the termbox API functions via NIFs:
@@ -27,7 +26,7 @@ Let's go through the bundled hello world example. To follow along, clone this re
 
 This repository makes use of Git submodules, so make sure you include them in your clone. In recent versions of git, this can be accomplished by including the --recursive flag, e.g.
 
-git clone --recursive d https://github.com/termbox/termbox2.git
+    # git clone --recursive d https://github.com/termbox/termbox2.git
 
 When the clone is complete, the c_src/termbox2/ directory should have files in it.
 
@@ -36,8 +35,7 @@ In a real project, you'll probably want to use an OTP application with a proper 
 
 Compiling the library.
 
-rebar3 compile
-
+    # rebar3 compile
 
 We'll add the standard boilerplate and begin the function run() which will contain the main part of the code.
 
@@ -54,10 +52,12 @@ Next, we initialize the termbox application. This initialization should come bef
     %% not implemented
     {ok, _Pid} = event_manager:start_link(),
 
+    %% also not implemented.
     ok = event_manager:subscribe(self()),
 
 To render content to the screen, we use put_cell/5.
 
+    %% totally implemented.
     change_cell(X,Y, Char, FG, BG)
 
 I'm going to be honest, its a single character at a specific x/y location.  Oh man how annoying.
@@ -96,12 +96,13 @@ Installation
 
 Add etermbox as a dependency in your project's rebar.config
 
-{deps,[
-  %% Source Dependencies
-  {etermbox, {git, "https://github.com/wmealing/etermbox.git", {branch, "master"}}}
-   ..
-   ]}.
-
+    {deps,[
+      %% Source Dependencies
+      {etermbox, {git, "https://github.com/wmealing/etermbox.git", {branch, "master"}}}
+       ..
+    ]}.
 
 So far the build has been tested on macOS and a few Linux distros. Please add an issue if you encounter any problems with the build.
+
+At the moment, i have'nt tested it, will keep hacking on it in the short term.
 
