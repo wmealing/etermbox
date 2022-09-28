@@ -19,14 +19,13 @@ Etermbox implements the termbox API functions via NIFs:
 - change_cell/5
 - poll_event/1
 
-
 Hello World
 
 Let's go through the bundled hello world example. To follow along, clone this repo and edit the example.
 
 This repository makes use of Git submodules, so make sure you include them in your clone. In recent versions of git, this can be accomplished by including the --recursive flag, e.g.
 
-    # git clone --recursive d https://github.com/termbox/termbox2.git
+    # git clone --recursive https://github.com/termbox/termbox2.git
 
 When the clone is complete, the c_src/termbox2/ directory should have files in it.
 

@@ -12,8 +12,11 @@ NIF_CFLAGS += -I$(ERTS_INCLUDE_DIR)
 
 SOURCES = termbox_bindings.c 
 
-all: $(PREFIX)/termbox_bindings.so
+all: upstream-termbox $(PREFIX)/termbox_bindings.so 
 	@:
+
+upstream-termbox:
+	cd $(TERMBOX_PATH) && CFLAGS="$(CFLAGS)"  make
 
 $(TERMBOX_BUILD)/src/libtermbox.%: $(TERMBOX_BUILD)
 	cd $(TERMBOX_PATH) && CFLAGS="$(CFLAGS)"  make
@@ -32,4 +35,3 @@ clean:
 .PHONY: list
 list:
 	@LC_ALL=C $(MAKE) -pRrq -f $(lastword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/(^|\n)# Files(\n|$$)/,/(^|\n)# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1}}' | sort | egrep -v -e '^[^[:alnum:]]' -e '^$@$$'
-
