@@ -2,6 +2,7 @@
 -behaviour(gen_server).
 
 
+
 -export([start_link/0]).
 -export([subscribe/1, unsubscribe/1]).
 -export([init/1, handle_call/3, handle_cast/2]).
@@ -18,11 +19,11 @@ unsubscribe(Process) ->
 init(_Args) ->
     {ok, cool}.
 
-handle_call({subscribe, Process}, _From, State) ->
+handle_call({subscribe, _Process}, _From, State) ->
     io:format("Subscribing...~n"),
-    {reply, subscribe_ok, State}.
+    {reply, subscribe_ok, State};
 
-handle_call({unsubscribe, Process}, _From, State) ->
+handle_call({unsubscribe,_Process}, _From, State) ->
     io:format("Unsubscribing...~n"),
     {reply, unsubscribe_ok, State}.
 
