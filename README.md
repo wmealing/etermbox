@@ -88,7 +88,7 @@ You can use this event-handling logic to respond to events any way you like---e.
 Finally, run the example like this:
 
 
-    $ erl -noshell -s termbox run
+    $ erl -noshell -s hello_world run
 
 You should see the text we rendered and be able to quit with 'q'.
 
