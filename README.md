@@ -96,11 +96,11 @@ Installation
 
 Add etermbox as a dependency in your project's rebar.config
 
-    {deps,[
-      %% Source Dependencies
-      {etermbox, {git, "https://github.com/wmealing/etermbox.git", {branch, "master"}}}
-       ..
-    ]}.
+      {deps,[
+        %% Source Dependencies
+        {etermbox, {git, "https://github.com/wmealing/etermbox.git", {branch, "master"}}}
+        ..
+      ]}.
 
 So far the build has been tested on macOS and a few Linux distros. Please add an issue if you encounter any problems with the build.
 
